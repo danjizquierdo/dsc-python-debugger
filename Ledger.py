@@ -10,13 +10,16 @@ class Ledger:
 
     def generate(self):
         self.counter += 1
-        if self.counter % 3 == 0:
+        if self.counter % 2 == 0:
             return [str(self.rng.choice(self.co, 1)[0]), str(self.rng.randint(10, 1000, 1)[0])]
         else:
             return [str(self.rng.choice(self.co, 1)[0]), int(self.rng.randint(10, 1000, 1))]
 
-
 bills = Ledger()
+
+
+def add_interest(bill, interest=.08):
+    return bill*(1+interest)
 
 
 def get_bill():
