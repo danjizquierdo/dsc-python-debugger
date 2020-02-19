@@ -19,17 +19,19 @@ bills = Ledger()
 
 
 def add_interest(bill, interest=.08):
+    '''Return a bill amount with added interest rate.'''
     return bill*(1+interest)
 
 
 def get_bill():
+    '''Generate a bill using the Ledger class object.'''
     bill = bills.generate()
     print(f'You need to pay {bill[0]} ${bill[1]}.')
     return bill
 
 
 def get_paid(bill_list, paycheck=3000):
-
+    '''Returns nothing. Take a list of bills and subtract from a paycheck amount (default $3000).'''
     print(f'Payday! You\'ve got {paycheck} in the bank.')
     print('Actually . . .')
     for bill in bill_list:
